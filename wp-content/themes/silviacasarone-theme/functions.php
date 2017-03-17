@@ -70,7 +70,7 @@ function html5blank_nav()
 		'theme_location'  => 'header-menu',
 		'menu'            => '',
 		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
+		'container_class' => 'menu-{menu slug}-container custom',
 		'container_id'    => '',
 		'menu_class'      => 'menu',
 		'menu_id'         => '',
@@ -80,7 +80,7 @@ function html5blank_nav()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
+		'items_wrap'      => '<ul class="nav navbar-nav navbar-right">%3$s</ul>',
 		'depth'           => 0,
 		'walker'          => ''
 		)
@@ -398,23 +398,23 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
 {
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_taxonomy_for_object_type('category', 'progetti'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'progetti');
+    register_post_type('progetti', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'name' => __('Progetti', 'progetti'), // Rename these to suit
+            'singular_name' => __('Progetto', 'progetti'),
+            'add_new' => __('Add New', 'progetti'),
+            'add_new_item' => __('Add New progetto', 'progetti'),
+            'edit' => __('Edit', 'progetti'),
+            'edit_item' => __('Edit', 'progetti'),
+            'new_item' => __('New', 'progetti'),
+            'view' => __('View', 'progetti'),
+            'view_item' => __('View', 'progetti'),
+            'search_items' => __('Search', 'progetti'),
+            'not_found' => __('No Posts found', 'progetti'),
+            'not_found_in_trash' => __('No Posts found in Trash', 'progetti')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -426,10 +426,12 @@ function create_post_type_html5()
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-calendar',
         'taxonomies' => array(
             'post_tag',
             'category'
-        ) // Add Category and Post Tags support
+        ) // Add Category and Post Tags support 
     ));
 }
 
