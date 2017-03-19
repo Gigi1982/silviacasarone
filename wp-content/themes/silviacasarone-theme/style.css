@@ -6737,6 +6737,10 @@ button.close {
   display: block;
   color: #fff;
 }
+.module-text {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
 body {
   font-family: 'basic_sanslight';
 }
@@ -6813,6 +6817,7 @@ h1.sc-written-logo-inner,
   background-color: #061811;
   color: #fff;
   min-height: 100px;
+  padding-top: 20px;
 }
 .footer .footer-left-bar {
   display: flex;
@@ -6899,9 +6904,27 @@ h1.sc-written-logo-inner,
   margin-top: 40px;
   margin-bottom: 20px;
 }
+.sc-laboratori-listing-content .date-intervallo {
+  text-transform: uppercase;
+  color: #000;
+}
+.sc-laboratori-listing-content h1,
+.sc-laboratori-listing-content p {
+  color: #54c693;
+}
 .sc-payoff {
   background-color: #54c693;
   padding: 40px 30px;
+  position: relative;
+}
+.sc-payoff:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  left: 10px;
+  top: 0;
+  background-color: #fff;
 }
 .sc-payoff .white,
 .sc-payoff .black {
@@ -6917,7 +6940,7 @@ h1.sc-written-logo-inner,
   color: #000;
 }
 .sc-progetti-slider {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .sc-progetti-slider .lSSlideOuter .lSPager.lSpg {
   text-align: left;
@@ -6929,28 +6952,47 @@ h1.sc-written-logo-inner,
 .sc-progetti-slider .sc-progetti-item:after {
   content: "";
   background: -moz-linear-gradient(top, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
-  /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a8cc6ac', endColorstr='#cc54c693', GradientType=0);
-  /* IE6-9 */
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
+  z-index: 1;
+}
+.sc-progetti-slider .sc-progetti-item:before {
+  content: "";
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a8cc6ac', endColorstr='#cc54c693', GradientType=0);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
 }
 .sc-progetti-slider .sc-progetti-item .sc-progetti-caption {
   display: block;
   position: absolute;
   bottom: 0;
   left: 10px;
-  z-index: 1;
+  z-index: 2;
+  color: #54c693;
 }
 .sc-progetti-slider .sc-progetti-item .sc-progetti-caption .sc-progetti-title {
   margin-top: 0;
+}
+.sc-partnerships .sc-partnership-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sc-partnerships .sc-partnership-inner .sc-partner-item {
+  margin-right: 10px;
 }
 /*! lightslider - v1.1.3 - 2015-04-14
 * https://github.com/sachinchoolur/lightslider

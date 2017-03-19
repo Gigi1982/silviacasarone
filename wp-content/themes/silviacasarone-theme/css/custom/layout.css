@@ -14,3 +14,7 @@
   display: block;
   color: #fff;
 }
+.module-text {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
