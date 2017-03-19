@@ -1,0 +1,31 @@
+@footer-height:100px;
+@footer-social-btn:30px;
+
+.footer {
+    background-color: @sc-footer;
+    color:#fff;
+    min-height: @footer-height;
+    .footer-left-bar {
+        display: flex;
+        align-items: baseline;
+        .footer-menu {
+            margin-left: 10px;
+        }
+    }
+    .social-footer {
+        > li {
+            > a {
+                background-color: #fff;
+                border-radius: 50%;
+                width: @footer-social-btn;
+                height: @footer-social-btn;
+                line-height: @footer-social-btn;
+                display: block;
+            }
+        }
+        .icon {
+            color:#000;
+            font-size: 22px;
+        }
+    }
+}

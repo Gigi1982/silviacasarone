@@ -2,3 +2,53 @@
     margin-top: @margin-top-big;
     margin-bottom: @margin-top-small;
 }
+
+.sc-payoff {
+    background-color: @sc-primary;
+    padding:40px 30px;
+    .white, .black {
+        font-family: 'los_nichesregular';
+        font-size: 44px;
+        display: block;
+        text-transform: uppercase;
+    }
+    .white {
+        color: #fff;
+    }
+    .black {
+        color: #000;
+    }
+}
+
+.sc-progetti-slider {
+    margin-top: 20px;
+    .lSSlideOuter .lSPager.lSpg {
+        text-align: left;
+    }
+    .sc-progetti-item {
+        height:236px;
+        position: relative;
+        &:after {
+            content:"";
+            background: -moz-linear-gradient(top, rgba(140,198,172,0.1) 0%, rgba(84,198,147,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(140,198,172,0.1) 0%,rgba(84,198,147,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(140,198,172,0.1) 0%,rgba(84,198,147,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a8cc6ac', endColorstr='#cc54c693',GradientType=0 ); /* IE6-9 */
+            position: absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            top:0;
+        }
+        .sc-progetti-caption {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            z-index: 1;
+            .sc-progetti-title {
+                margin-top: 0;
+            }
+        }
+    }
+}

@@ -4,7 +4,9 @@
 		
 		'use strict';
 		
-		// DOM ready, take it away
+		 $(".sc-progetti-showcase").lightSlider({
+             item: 3
+         });
 		
 	});
 	

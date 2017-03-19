@@ -87,6 +87,31 @@ function html5blank_nav()
 	);
 }
 
+function html5blank_nav_footer()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'footer-menu',
+		'menu'            => '',
+		'container'       => 'nav',
+		'container_class' => 'menu-{menu slug}-container',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => false,
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '<li><span class="separator">|</span></li>',
+		'items_wrap'      => '<ul class="list-unstyled list-inline footer-menu">%3$s</ul>',
+		'depth'           => 0,
+		'walker'          => ''
+		)
+	);
+}
+
+
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
@@ -100,6 +125,9 @@ function html5blank_header_scripts()
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
+        
+        wp_register_script('lightslider', get_template_directory_uri() . '/js/lib/lightslider.js', array(), '1.0');
+        wp_enqueue_script('lightslider'); // Enqueue it!
     }
 }
 
@@ -128,7 +156,7 @@ function register_html5_menu()
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
         'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'footer-menu' => __('Footer Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -427,7 +455,42 @@ function create_post_type_html5()
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
         'menu_position' => 5,
-        'menu_icon' => 'dashicons-calendar',
+        'menu_icon' => 'dashicons-admin-generic',
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ) // Add Category and Post Tags support 
+    ));
+    register_taxonomy_for_object_type('category', 'laboratori'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'laboratori');
+    register_post_type('laboratori', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Laboratori', 'laboratori'), // Rename these to suit
+            'singular_name' => __('Laboratorio', 'laboratori'),
+            'add_new' => __('Add New', 'laboratori'),
+            'add_new_item' => __('Add New laboratorio', 'laboratori'),
+            'edit' => __('Edit', 'laboratori'),
+            'edit_item' => __('Edit', 'laboratori'),
+            'new_item' => __('New', 'laboratori'),
+            'view' => __('View', 'laboratori'),
+            'view_item' => __('View', 'laboratori'),
+            'search_items' => __('Search', 'laboratori'),
+            'not_found' => __('No Posts found', 'laboratori'),
+            'not_found_in_trash' => __('No Posts found in Trash', 'laboratori')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-category',
         'taxonomies' => array(
             'post_tag',
             'category'

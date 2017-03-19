@@ -1,13 +1,21 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
-
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
-
+                <div class="container">
+                    <!-- copyright -->
+                    <div class="footer-left-bar pull-left">
+                        <span class="copyright">
+                            &copy; <?php echo date('Y'); ?><?php bloginfo('name'); ?>. All rights reserved.
+                        </span>
+                        <?php html5blank_nav_footer(); ?>
+                    </div>
+                    
+                    <nav class="nav navbar-nav navbar-right">
+                        <ul class="list-unstyled list-inline social-footer">
+                            <li><a href="#"><i class="icon icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon icon-linkedin"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
 			</footer>
 			<!-- /footer -->
 

@@ -16,7 +16,61 @@
                         </div>
                         <div class="col-md-6">
                             <div class="sc-laboratori-block">
+                                <?php 
+                                $args = array(
+                                    'post_type' => 'laboratori',
+                                    'posts_per_page'   => 1
+                                );
+                                $loop = new WP_Query( $args );
+                                while ( $loop->have_posts() ) : $loop->the_post();
+                                ?>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <div class="laboratori-listing-content">
+                                            <span><?php the_field('intervallo_data'); ?></span>
+                                            <h1><?php the_title(); ?></h1>
+                                            <p><?php the_excerpt(); ?></p>
+                                        </div>
+                                    </a>
 
+
+                                <?php endwhile;?>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="sc-payoff">
+                                <span class="white">Propongo PERCORSI DI GRUPPO A MEDIAZIONE TEATRALE,</span>
+                                <span class="black">IN CONTESTI FORMATIVI, SOCIALI, EDUCATIVI E RIABILITATIVI</span>
+                                <span class="white">PER tutte le fasce di età.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sc-progetti-slider">
+                        <ul class="sc-progetti-showcase">
+                        <?php 
+                            $args = array('post_type' => 'progetti');
+                            $loop = new WP_Query( $args );
+                            while ( $loop->have_posts() ) : $loop->the_post();
+                            $bg = get_the_post_thumbnail_url();
+                            ?>
+                              <li class="">
+                                  <div class="sc-progetti-item" style="background-image:url('<?php echo $bg; ?>')">
+                                    <a class="sc-progetti-caption" href="<?php the_permalink(); ?>">
+                                        <div class="sc-progetti-inner">
+                                            <?php if(get_field('progetti_data')): ?>
+                                            <span class="sc-progetti-date"><?php the_field('progetti_data'); ?></span>
+                                            <?php endif; ?>
+                                            <h2 class="sc-progetti-title"><?php the_title(); ?></h1>
+                                        </div>
+                                    </a>
+                                  </div>
+                              </li>
+                            <?php endwhile;?>
+                        </ul>
+                    </div>
+                    <div class="sc-partnerships">
+                        <div class="sc-partnership-inner">
+                            <div class="sc-partner-item">
+                                <img src="<?php the_field('partner_img'); ?>">
                             </div>
                         </div>
                     </div>
