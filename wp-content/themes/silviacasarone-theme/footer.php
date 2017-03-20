@@ -4,8 +4,9 @@
                     <!-- copyright -->
                     <div class="footer-left-bar pull-left">
                         <span class="copyright">
-                            &copy; <?php echo date('Y'); ?><?php bloginfo('name'); ?>. All rights reserved.
+                            &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.
                         </span>
+                        <span class="separator">|</span> <span> P.I. 01738080934 </span> <span class="separator">|</span>
                         <?php html5blank_nav_footer(); ?>
                     </div>
                     

@@ -11,10 +11,17 @@
     h1, p {
         color:@sc-primary;
     }
+    .view-article {
+        position: absolute;
+        right: 25px;   
+        text-transform: uppercase;
+        color:#000;
+    }
 }
 
 .sc-payoff {
     background-color: @sc-primary;
+    background-image: url('img/pattern.png');
     padding:40px 30px;
     position: relative;
     &:before {
@@ -93,7 +100,18 @@
     }
 }
 
+.sc-inner-link {
+    margin-top: 20px;
+    margin-right: 20px;
+    > a {
+        color: #000;
+        font-family: 'basic_sanssemibold';
+    }
+}
+
 .sc-partnerships {
+    margin-top: 60px;
+    margin-bottom: 60px;
     .sc-partnership-inner {
         display: flex;
         justify-content: center;

@@ -6731,11 +6731,14 @@ button.close {
 }
 .main-header-container .sc-written-logo-container {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
 }
 .main-header-container .sc-written-logo-container > a {
   display: block;
   color: #fff;
+}
+.main-header-container .sc-written-logo-container > a h2 {
+  margin-top: 5px;
 }
 .module-text {
   overflow: hidden;
@@ -6743,6 +6746,12 @@ button.close {
 }
 body {
   font-family: 'basic_sanslight';
+}
+b {
+  font-family: 'basic_sanssemibold';
+}
+em {
+  font-family: 'los_niches-scitalic';
 }
 h4,
 .h4 {
@@ -6767,6 +6776,11 @@ h1.sc-written-logo-inner,
 .titoletti {
   font-family: 'basic_sanssemibold';
   font-size: 16px;
+}
+.sc-progetti-date {
+  color: #fff;
+  font-family: 'basic_sanssemibold';
+  text-transform: uppercase;
 }
 @font-face {
   font-family: 'basic_sanslight';
@@ -6823,8 +6837,20 @@ h1.sc-written-logo-inner,
   display: flex;
   align-items: baseline;
 }
+.footer .footer-left-bar .separator {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .footer .footer-left-bar .footer-menu {
   margin-left: 10px;
+}
+.footer .footer-left-bar .footer-menu > li:last-child {
+  display: none;
+}
+.footer .footer-left-bar .footer-menu > li > a {
+  color: #fff;
 }
 .footer .social-footer > li > a {
   background-color: #fff;
@@ -6912,8 +6938,15 @@ h1.sc-written-logo-inner,
 .sc-laboratori-listing-content p {
   color: #54c693;
 }
+.sc-laboratori-listing-content .view-article {
+  position: absolute;
+  right: 25px;
+  text-transform: uppercase;
+  color: #000;
+}
 .sc-payoff {
   background-color: #54c693;
+  background-image: url('img/pattern.png');
   padding: 40px 30px;
   position: relative;
 }
@@ -6985,6 +7018,18 @@ h1.sc-written-logo-inner,
 }
 .sc-progetti-slider .sc-progetti-item .sc-progetti-caption .sc-progetti-title {
   margin-top: 0;
+}
+.sc-inner-link {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.sc-inner-link > a {
+  color: #000;
+  font-family: 'basic_sanssemibold';
+}
+.sc-partnerships {
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 .sc-partnerships .sc-partnership-inner {
   display: flex;
@@ -7367,4 +7412,15 @@ h1.sc-written-logo-inner,
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
   cursor: grabbing;
+}
+.lSSlideOuter .lSPager.lSpg > li:hover a,
+.lSSlideOuter .lSPager.lSpg > li.active a {
+  background-color: #54c693;
+  border: 1px solid #54c693;
+}
+.lSSlideOuter .lSPager.lSpg > li a {
+  background-color: transparent;
+  border: 1px solid #54c693;
+  width: 10px;
+  height: 10px;
 }

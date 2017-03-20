@@ -12,7 +12,7 @@
                                     Teatroterapeuta diplomata presso la Scuola di Formazione Triennale in Teatroterapiadi Colico (LC) e laureata in Dams e in Sociologia presso l’Università degli Studi di Torino. <br> <br>
         Ho sviluppato una personale modalità di conduzione dei gruppi per dare spazio
         alle urgenze comunicative, relazionali ed emotive dei partecipanti utilizzando
-        principalmente l’espressione corporea, l’improvvisazione, la narrazione e la scrittura.
+        principalmente l’<b>espressione corporea, l’improvvisazione, la narrazione e la scrittura.</b>
                                 </p>
                             </div>
                             <div class="col-md-6">
@@ -25,19 +25,20 @@
                                     $loop = new WP_Query( $args );
                                     while ( $loop->have_posts() ) : $loop->the_post();
                                     ?>
-                                        <a href="<?php the_permalink(); ?>">
-                                            <div class="sc-laboratori-listing-content">
-                                                <span class="date-intervallo titoletti"><?php the_field('intervallo_data'); ?></span>
-                                                <h1><?php the_title(); ?></h1>
-                                                <p><?php html5wp_excerpt('html5wp_custom_post'); ?></p>
-                                            </div>
-                                        </a>
-
-
+                                        <div class="sc-laboratori-listing-content">
+                                            <span class="date-intervallo titoletti"><?php the_field('intervallo_data'); ?></span>
+                                            <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
+                                            <p><?php html5wp_excerpt('html5wp_custom_post'); ?></p>
+                                        </div>
                                     <?php 
                                     endwhile;
                                     wp_reset_query();
                                     ?>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="sc-inner-link text-right">
+                                    <a href="#">PROSSIMI LABORATORI></a>
                                 </div>
                             </div>
                         </div>
@@ -75,6 +76,13 @@
                             wp_reset_query();
                             ?>
                         </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sc-inner-link text-right">
+                                <a href="#">VAI A TUTTI I PROGETTI></a>
+                            </div>
+                        </div>
                     </div>
                     <?php if( have_rows('blocco_loghi_immagini') ): ?>
                     <div class="sc-partnerships">

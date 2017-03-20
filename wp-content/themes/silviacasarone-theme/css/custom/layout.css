@@ -8,11 +8,14 @@
 }
 .main-header-container .sc-written-logo-container {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
 }
 .main-header-container .sc-written-logo-container > a {
   display: block;
   color: #fff;
+}
+.main-header-container .sc-written-logo-container > a h2 {
+  margin-top: 5px;
 }
 .module-text {
   overflow: hidden;
