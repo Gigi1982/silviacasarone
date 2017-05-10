@@ -128,6 +128,15 @@ function html5blank_header_scripts()
         
         wp_register_script('lightslider', get_template_directory_uri() . '/js/lib/lightslider.js', array(), '1.0');
         wp_enqueue_script('lightslider'); // Enqueue it!
+        
+        wp_register_script('googlemaps-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC8bLsBAZpUWhUELHClzgXv3v3HxBHzIcI', array(), '1.0.0'); // Custom scripts
+        wp_enqueue_script('googlemaps-api'); // Enqueue it!
+        
+        wp_register_script('snazzy-maps', get_template_directory_uri() . '/js/lib/snazzymaps.js', array(), '1.0.0'); // Custom scripts
+        wp_enqueue_script('snazzy-maps'); // Enqueue it!
+        
+        wp_register_script('lightslider', get_template_directory_uri() . '/js/lib/lightslider.js', array(), '1.0');
+        wp_enqueue_script('lightslider'); // Enqueue it!
     }
 }
 
@@ -512,6 +521,38 @@ function html5_shortcode_demo($atts, $content = null)
 function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
 {
     return '<h2>' . $content . '</h2>';
+}
+
+function the_breadcrumb() {
+		echo '<ul id="crumbs">';
+	if (!is_home()) {
+		echo '<li><a href="';
+		echo get_option('home');
+		echo '">';
+		echo 'Home';
+		echo "</a></li>";
+		if (is_category() || is_single()) {
+			echo '<li>';
+			the_category(' </li><li> ');
+			if (is_single()) {
+				echo "</li><li>";
+				the_title();
+				echo '</li>';
+			}
+		} elseif (is_page()) {
+			echo '<li>';
+			echo the_title();
+			echo '</li>';
+		}
+	}
+	elseif (is_tag()) {single_tag_title();}
+	elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+	elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+	elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+	elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+	elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+	elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+	echo '</ul>';
 }
 
 ?>

@@ -21,3 +21,8 @@
   overflow: hidden;
   margin-bottom: 40px;
 }
+.single-pages .single-pages-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+}

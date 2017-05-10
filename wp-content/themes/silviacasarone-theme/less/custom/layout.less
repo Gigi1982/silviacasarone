@@ -22,3 +22,49 @@
     overflow: hidden;
     margin-bottom: 40px;
 }
+
+.single-pages {
+    .single-pages-header {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 280px;
+    }
+}
+
+.sc-payoff {
+    background-color: @sc-primary;
+    background-image: url('img/pattern.png');
+    padding:40px 30px;
+    position: relative;
+    margin:90px 0;
+    &.no-bg {
+        background-image: none;
+        padding:10px 20px;
+        .white, .black {
+            font-family: 'los_nichesregular';
+            font-size: 22px;
+            display: inline-block;
+        }
+    }
+    &:before {
+        content:"";
+        position: absolute;
+        width:10px;
+        height: 100%;
+        left:10px;
+        top:0;
+        background-color: #fff;
+    }
+    .white, .black {
+        font-family: 'los_nichesregular';
+        font-size: 44px;
+        display: block;
+        text-transform: uppercase;
+    }
+    .white {
+        color: #fff;
+    }
+    .black {
+        color: #000;
+    }
+}

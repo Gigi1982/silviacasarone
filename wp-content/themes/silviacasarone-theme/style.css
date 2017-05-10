@@ -6744,6 +6744,50 @@ button.close {
   overflow: hidden;
   margin-bottom: 40px;
 }
+.single-pages .single-pages-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+}
+.sc-payoff {
+  background-color: #54c693;
+  background-image: url('img/pattern.png');
+  padding: 40px 30px;
+  position: relative;
+  margin: 90px 0;
+}
+.sc-payoff.no-bg {
+  background-image: none;
+  padding: 10px 20px;
+}
+.sc-payoff.no-bg .white,
+.sc-payoff.no-bg .black {
+  font-family: 'los_nichesregular';
+  font-size: 22px;
+  display: inline-block;
+}
+.sc-payoff:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  left: 10px;
+  top: 0;
+  background-color: #fff;
+}
+.sc-payoff .white,
+.sc-payoff .black {
+  font-family: 'los_nichesregular';
+  font-size: 44px;
+  display: block;
+  text-transform: uppercase;
+}
+.sc-payoff .white {
+  color: #fff;
+}
+.sc-payoff .black {
+  color: #000;
+}
 body {
   font-family: 'basic_sanslight';
 }
@@ -6763,6 +6807,15 @@ h2,
   font-family: 'los_niches-scitalic';
   font-size: 34px;
 }
+h3,
+.h3 {
+  font-family: 'los_nichesregular';
+  font-size: 24px;
+}
+h3.basic,
+.h3.basic {
+  font-family: 'basic_sanssemibold';
+}
 h1,
 .h1 {
   font-family: 'los_niches-scitalic';
@@ -6773,9 +6826,16 @@ h1.sc-written-logo-inner,
   font-family: 'los_nichesregular';
   font-size: 76px;
 }
-.titoletti {
+.titoletti,
+.single-pages-metadata-title {
   font-family: 'basic_sanssemibold';
   font-size: 16px;
+}
+.single-pages-left-title {
+  font-family: 'basic_sanslight';
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
 }
 .sc-progetti-date {
   color: #fff;
@@ -6873,6 +6933,57 @@ h1.sc-written-logo-inner,
   font-family: 'basic_sanssemibold';
   font-size: 16px;
 }
+.single-pages .single-pages-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+  position: relative;
+}
+.single-pages .single-pages-header:after {
+  content: "";
+  background: -moz-linear-gradient(top, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
+  background: -webkit-linear-gradient(top, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
+  background: linear-gradient(to bottom, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a8cc6ac', endColorstr='#cc54c693', GradientType=0);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+.single-pages .single-pages-header:before {
+  content: "";
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a8cc6ac', endColorstr='#cc54c693', GradientType=0);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
+}
+.single-pages .single-pages-header .single-pages-title {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.single-pages .single-pages-header .single-pages-title h1 {
+  color: #54c693;
+}
+#crumbs {
+  list-style-type: none;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+#crumbs > li {
+  display: inline-block;
+  margin-right: 10px;
+}
 @font-face {
   font-family: 'fontello';
   src: url('fonts/fontello.eot?88023815');
@@ -6944,34 +7055,6 @@ h1.sc-written-logo-inner,
   text-transform: uppercase;
   color: #000;
 }
-.sc-payoff {
-  background-color: #54c693;
-  background-image: url('img/pattern.png');
-  padding: 40px 30px;
-  position: relative;
-}
-.sc-payoff:before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 100%;
-  left: 10px;
-  top: 0;
-  background-color: #fff;
-}
-.sc-payoff .white,
-.sc-payoff .black {
-  font-family: 'los_nichesregular';
-  font-size: 44px;
-  display: block;
-  text-transform: uppercase;
-}
-.sc-payoff .white {
-  color: #fff;
-}
-.sc-payoff .black {
-  color: #000;
-}
 .sc-progetti-slider {
   margin-top: 15px;
 }
@@ -7037,6 +7120,17 @@ h1.sc-written-logo-inner,
   align-items: center;
 }
 .sc-partnerships .sc-partnership-inner .sc-partner-item {
+  margin-right: 10px;
+}
+.single-pages-metadata-block .single-pages-metadata-title {
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.single-pages-subtitle {
+  margin-bottom: 20px;
+}
+.single-pages-footer .black,
+.single-pages-footer .white {
   margin-right: 10px;
 }
 /*! lightslider - v1.1.3 - 2015-04-14
