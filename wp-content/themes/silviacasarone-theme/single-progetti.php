@@ -1,7 +1,10 @@
 <?php get_header(); ?>
 <section class="single-pages">
     <div class="container">
-        <header class="single-pages-header" style="background-image:url('http://lorempixel.com/1280/280/sports/1/');">
+        <?php 
+            $bg = get_the_post_thumbnail_url(); 
+        ?>
+        <header class="single-pages-header" style="background-image:url('<?php echo $bg; ?>');">
             <?php the_breadcrumb(); ?>
             <div class="single-pages-title">
                 <div class="container-fluid">
@@ -11,34 +14,53 @@
         </header>
         <section class="single-pages-body">
             <div class="container-fluid">
+                <?php if(get_field('progetti_subtitle')): ?>
                 <div class="single-pages-subtitle">
-                    <h2 class="h3 green">E se il teatro si sporcasse le mani con la terra?</h2>
+                    <h2 class="h3 green"><?php the_field('progetti_subtitle'); ?></h2>
                 </div>
+                <?php endif; ?>
                 <div class="row">
                     <div class="col-md-4">
+                        <?php if(get_field('progetti_data')): ?>
                         <div class="single-pages-metadata-block">
                             <h5 class="single-pages-metadata-title">Periodo</h5>
-                            <span class="single-pages-metadata-content green">giugno 2014, luglio 2015</span>
+                            <span class="single-pages-metadata-content green"><?php the_field('progetti_data'); ?></span>
                         </div>
+                        <?php endif; ?>
+                        <?php if(get_field('progetti_struttura')): ?>
                         <div class="single-pages-metadata-block">
                             <h5 class="single-pages-metadata-title">Struttura</h5>
-                            <span class="single-pages-metadata-content green">6 incontri di 2 ore a cadenza settimanale</span>
+                            <span class="single-pages-metadata-content green"><?php the_field('progetti_struttura'); ?></span>
                         </div>
+                        <?php endif; ?> 
+                        <?php if(get_field('progetti_partecipanti')): ?>
                         <div class="single-pages-metadata-block">
-                            <h5 class="single-pages-metadata-title">Struttura</h5>
-                            <span class="single-pages-metadata-content green">6 incontri di 2 ore a cadenza settimanale</span>
+                            <h5 class="single-pages-metadata-title">Partecipanti</h5>
+                            <span class="single-pages-metadata-content green"><?php the_field('progetti_partecipanti'); ?></span>
                         </div>
+                        <?php endif; ?> 
                     </div>
                     <div class="col-md-8">
-                        <p class="">Lorem ipsum dolor <b>sit amet</b>, consectetur adipiscing elit. Sed tincidunt molestie dolor ut euismod. Vivamus at quam ac nisi congue dapibus id in augue. Ut facilisis, diam nec blandit malesuada, nulla nunc lacinia nibh, sed hendrerit felis metus eu dolor. Integer lacinia lacus eu tincidunt ullamcorper. Sed aliquet vehicula convallis. Ut nec urna vestibulum, posuere erat vitae, faucibus magna. Phasellus ullamcorper ipsum ut purus tincidunt, ac maximus leo dignissim. Fusce ut scelerisque risus, vitae porta nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt molestie dolor ut euismod. Vivamus at quam ac nisi congue dapibus id in augue. Ut facilisis, diam nec blandit malesuada, nulla nunc lacinia nibh, sed hendrerit felis metus eu dolor. Integer lacinia lacus eu tincidunt ullamcorper. Sed aliquet vehicula convallis. Ut nec urna vestibulum, posuere erat vitae, faucibus magna. Phasellus ullamcorper ipsum ut purus tincidunt, ac maximus leo dignissim. Fusce ut scelerisque risus, vitae porta nibh.</p>
+                        <?php if(get_field('progetto_testo')): ?>
+                        <p class=""><?php the_field('progetto_testo'); ?></p>
+                        <?php endif; ?> 
                     </div>
                 </div>
             </div>
         </section>
     </div>
-        <section>
-            <div id="map" style="width:700px;height:700px;"></div>
-        </section>
+    <section class="single-project-map">
+        <?php 
+
+        $location = get_field('mappa_progetto');
+
+        if( !empty($location) ):
+        ?>
+        <div class="acf-map">
+            <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+        </div>
+        <?php endif; ?>
+    </section>
     <div class="container">
         <section class="single-pages-body">
             <div class="container-fluid">
@@ -49,13 +71,15 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <p class="">Lorem ipsum dolor <b>sit amet</b>, consectetur adipiscing elit. Sed tincidunt molestie dolor ut euismod. Vivamus at quam ac nisi congue dapibus id in augue. Ut facilisis, diam nec blandit malesuada, nulla nunc lacinia nibh, sed hendrerit felis metus eu dolor. Integer lacinia lacus eu tincidunt ullamcorper. Sed aliquet vehicula convallis. Ut nec urna vestibulum, posuere erat vitae, faucibus magna. Phasellus ullamcorper ipsum ut purus tincidunt, ac maximus leo dignissim. Fusce ut scelerisque risus, vitae porta nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt molestie dolor ut euismod. Vivamus at quam ac nisi congue dapibus id in augue. Ut facilisis, diam nec blandit malesuada, nulla nunc lacinia nibh, sed hendrerit felis metus eu dolor. Integer lacinia lacus eu tincidunt ullamcorper. Sed aliquet vehicula convallis. Ut nec urna vestibulum, posuere erat vitae, faucibus magna. Phasellus ullamcorper ipsum ut purus tincidunt, ac maximus leo dignissim. Fusce ut scelerisque risus, vitae porta nibh.</p>
+                        <?php if(get_field('progetto_finalita')): ?>
+                        <p class=""><?php the_field('progetto_finalita'); ?></p>
+                        <?php endif; ?> 
                     </div>
                 </div>
             </div>
         </section>
         <div class="sc-payoff single-pages-footer no-bg">
-            <div class="container-fluid"><span class="black">PROPOSTO DA </span> <span class="white">ASSOCIAZIONE DUENDE</span><span class="black">CON IL SOSTEGNO DI </span><span class="white">COMUNE DI TORINO - CIRCOSCRIZIONE 10</span></div>
+            <div class="container-fluid"><span class="black">PROPOSTO DA </span> <span class="white"><?php the_field('progetto_associazione'); ?></span><span class="black">CON IL SOSTEGNO DI </span><span class="white"><?php the_field('progetto_sostegno'); ?></span></div>
         </div>
     </div>
 </section>

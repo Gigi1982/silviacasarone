@@ -65,7 +65,7 @@
                                             <?php if(get_field('progetti_data')): ?>
                                             <span class="sc-progetti-date"><?php the_field('progetti_data'); ?></span>
                                             <?php endif; ?>
-                                            <h2 class="sc-progetti-title"><?php the_title(); ?></h1>
+                                            <h2 class="sc-progetti-title"><?php the_title(); ?></h2>
                                         </div>
                                     </a>
                                   </div>

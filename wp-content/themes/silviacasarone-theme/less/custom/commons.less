@@ -1,0 +1,57 @@
+.listing-container {
+    margin:40px 0;
+    .listing-item {
+        min-height: 200px;
+        background-size: cover;
+        margin-bottom: 20px;
+        position: relative;
+        &:after {
+            content:"";
+            background: -moz-linear-gradient(top, @green-lighter 0%, @green-darker 100%); 
+            background: -webkit-linear-gradient(top, @green-lighter 0%,@green-darker 100%);
+            background: linear-gradient(to bottom, @green-lighter 0%,@green-darker 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a8cc6ac', endColorstr='#cc54c693',GradientType=0 );
+            position: absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            top:0;
+            z-index: 1;
+        }
+        &:before {
+            content:"";
+            background: -moz-linear-gradient(top, @black-lighter 0%, @black-darker 100%); 
+            background: -webkit-linear-gradient(top, @black-lighter 0%,@black-darker 100%);
+            background: linear-gradient(to bottom, @black-lighter 0%,@black-darker 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a8cc6ac', endColorstr='#cc54c693',GradientType=0 );
+            position: absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            top:0;
+            z-index: 2;
+        }
+    }
+    .listing-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 2;
+        .listing-inner {
+            .listing-date {
+                color:#fff;
+            }
+            .listing-title {
+                margin-top: 0;
+                color:@sc-primary;
+            }
+        }
+    }
+}
+
+.category-pages-header {
+    background-color: @sc-primary;
+    background-image: url('img/pattern.png');
+    padding:40px 30px;
+    position: relative;
+}
