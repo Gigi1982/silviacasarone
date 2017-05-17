@@ -6979,10 +6979,26 @@ h1.sc-written-logo-inner,
   list-style-type: none;
   padding-top: 15px;
   padding-left: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 #crumbs > li {
   display: inline-block;
   margin-right: 10px;
+  color: #fff;
+}
+#crumbs > li > a {
+  color: #fff;
+  text-decoration: underline;
+}
+#crumbs > li:after {
+  content: ">";
+  margin-left: 10px;
+}
+#crumbs > li:last-child:after {
+  display: none;
 }
 @font-face {
   font-family: 'fontello';

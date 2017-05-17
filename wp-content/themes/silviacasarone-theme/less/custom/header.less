@@ -62,9 +62,27 @@
     list-style-type: none;
     padding-top: 15px;
     padding-left: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
     > li {
         display: inline-block;
         margin-right: 10px;
+        color: #fff;
+        > a {
+            color:#fff;
+            text-decoration: underline;
+        }
+        &:after {
+            content: ">";
+            margin-left: 10px;
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
     }
 }
 
