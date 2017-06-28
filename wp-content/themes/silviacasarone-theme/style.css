@@ -6940,6 +6940,8 @@ h1.sc-written-logo-inner,
   background-size: cover;
   height: 280px;
   position: relative;
+  background-color: #54c693;
+  background-image: url(img/pattern.png);
 }
 .single-pages .single-pages-header:after {
   content: "";

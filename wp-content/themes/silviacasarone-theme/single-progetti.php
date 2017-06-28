@@ -3,8 +3,13 @@
     <div class="container">
         <?php 
             $bg = get_the_post_thumbnail_url(); 
+            $templateUrl = get_template_directory_uri();
         ?>
+        <?php if($bg): ?>
         <header class="single-pages-header" style="background-image:url('<?php echo $bg; ?>');">
+        <?php else: ?>
+        <header class="single-pages-header" style="background-repeat:repeat;background-size: auto;background-image:url('<?php echo $templateUrl . "/img/pattern.png" ?>');">
+        <?php endif; ?>
             <?php the_breadcrumb(); ?>
             <div class="single-pages-title">
                 <div class="container-fluid">

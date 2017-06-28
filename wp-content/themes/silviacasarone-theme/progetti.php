@@ -17,9 +17,14 @@
                 $loop = new WP_Query( $args );
                 while ( $loop->have_posts() ) : $loop->the_post();
                 $bg = get_the_post_thumbnail_url();
+                $templateUrl = get_template_directory_uri();
                 ?>
                   <div class="col-md-4">
+                      <?php if($bg): ?>
                       <div class="listing-item" style="background-image:url('<?php echo $bg; ?>')">
+                        <?php else: ?>
+                        <div class="listing-item" style="background-repeat:repeat;background-size: auto;background-image:url('<?php echo $templateUrl . "/img/pattern.png" ?>');">
+                        <?php endif; ?>
                         <a class="listing-caption" href="<?php the_permalink(); ?>">
                             <div class="listing-inner">
                                 <?php if(get_field('progetti_data')): ?>
