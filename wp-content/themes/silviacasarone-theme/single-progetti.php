@@ -21,35 +21,39 @@
                 <?php endif; ?>
                 <div class="row">
                     <div class="col-md-4">
-                        <?php if(get_field('progetti_data')): ?>
-                        <div class="single-pages-metadata-block">
-                            <h5 class="single-pages-metadata-title">Periodo</h5>
-                            <span class="single-pages-metadata-content green"><?php the_field('progetti_data'); ?></span>
+                        <div class="left-column">
+                            <?php if(get_field('progetti_data')): ?>
+                            <div class="single-pages-metadata-block">
+                                <h5 class="single-pages-metadata-title">Periodo</h5>
+                                <span class="single-pages-metadata-content green"><?php the_field('progetti_data'); ?></span>
+                            </div>
+                            <?php endif; ?>
+                            <?php if(get_field('progetti_struttura')): ?>
+                            <div class="single-pages-metadata-block">
+                                <h5 class="single-pages-metadata-title">Durata</h5>
+                                <span class="single-pages-metadata-content green"><?php the_field('progetti_struttura'); ?></span>
+                            </div>
+                            <?php endif; ?> 
+                            <?php if(get_field('progetti_partecipanti')): ?>
+                            <div class="single-pages-metadata-block">
+                                <h5 class="single-pages-metadata-title">Partecipanti</h5>
+                                <span class="single-pages-metadata-content green"><?php the_field('progetti_partecipanti'); ?></span>
+                            </div>
+                            <?php endif; ?> 
+                            <?php if(get_field('progetti_partnership')): ?>
+                            <div class="single-pages-metadata-block">
+                                <h5 class="single-pages-metadata-title">In collaborazione con</h5>
+                                <span class="single-pages-metadata-content green"><?php the_field('progetti_partnership'); ?></span>
+                            </div>
+                            <?php endif; ?> 
                         </div>
-                        <?php endif; ?>
-                        <?php if(get_field('progetti_struttura')): ?>
-                        <div class="single-pages-metadata-block">
-                            <h5 class="single-pages-metadata-title">Durata</h5>
-                            <span class="single-pages-metadata-content green"><?php the_field('progetti_struttura'); ?></span>
-                        </div>
-                        <?php endif; ?> 
-                        <?php if(get_field('progetti_partecipanti')): ?>
-                        <div class="single-pages-metadata-block">
-                            <h5 class="single-pages-metadata-title">Partecipanti</h5>
-                            <span class="single-pages-metadata-content green"><?php the_field('progetti_partecipanti'); ?></span>
-                        </div>
-                        <?php endif; ?> 
-                        <?php if(get_field('progetti_partecipanti')): ?>
-                        <div class="single-pages-metadata-block">
-                            <h5 class="single-pages-metadata-title">In collaborazione con</h5>
-                            <span class="single-pages-metadata-content green"><?php the_field('progetti_partnership'); ?></span>
-                        </div>
-                        <?php endif; ?> 
                     </div>
                     <div class="col-md-8">
-                        <?php if(get_field('progetto_testo')): ?>
-                        <p class=""><?php the_field('progetto_testo'); ?></p>
-                        <?php endif; ?> 
+                        <div class="right-column">
+                            <?php if(get_field('progetto_testo')): ?>
+                            <p class=""><?php the_field('progetto_testo'); ?></p>
+                            <?php endif; ?> 
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -69,6 +73,7 @@
                     </div>
                     <div class="col-md-8">
                         <?php if(get_field('progetto_finalita')): ?>
+                        <h3 class="single-pages-left-title">Finalità</h3>
                         <div class=""><?php the_field('progetto_finalita'); ?></div>
                         <?php endif; ?> 
                     </div>
