@@ -6837,7 +6837,8 @@ h1.sc-written-logo-inner,
   margin: 0;
   padding: 0;
 }
-.sc-progetti-date {
+.sc-progetti-date,
+.post-type-label {
   color: #fff;
   font-family: 'basic_sanssemibold';
   text-transform: uppercase;
@@ -7171,6 +7172,9 @@ h1.sc-written-logo-inner,
 }
 .sc-progetti-slider .sc-progetti-item .sc-progetti-caption .sc-progetti-title {
   margin-top: 0;
+}
+.sc-progetti-slider .sc-progetti-item .sc-progetti-caption .post-type-label {
+  display: block;
 }
 .sc-inner-link {
   margin-top: 20px;

@@ -2871,10 +2871,69 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
 		}
 		?>
 	</style>
+<!--delete this css-->
+    <link rel="stylesheet" id="html5blank-css" href="https://www.silviacasarone.com/wp-content/themes/silviacasarone-theme/style.css?ver=1.0" media="all">
 </head>
 <body id="error-page">
+    <!--delete this style-->
+    <style>
+        #error-page {
+            background: #061811;
+            max-width: none;
+            margin:0;
+            padding:0;
+            box-shadow: none;
+            height: 100vh;
+        }
+        #error-page .main-header-container {
+            background-image: url(http://www3.silviacasarone.it/wp-content/themes/silviacasarone-theme/img/header.jpg);
+            background-size: cover;
+            background-position: center center;
+            width: 100vw;
+            height: 256px;
+            position: relative;
+        }
+        #error-page h1 {
+            border-bottom: 0;
+        }
+        #error-page .sc-payoff.no-bg {
+            margin:0;
+            min-height: 220px;
+        }
+        #error-page a {
+            text-align: center;
+            display: block;
+        }
+        #error-page .mailto-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+    <!--uncomment this-->
 <?php endif; // ! did_action( 'admin_head' ) ?>
-	<?php echo $message; ?>
+    <!--delete this-->
+    <div class="main-header-container">
+        <div class="container">
+            <div class="sc-written-logo-container text-center">
+                <a href="https://www.silviacasarone.com">
+                    <h1 class="sc-written-logo-inner">
+                        <img src="/sc-logo-temp.png">
+                    </h1>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sc-payoff single-pages-footer no-bg">
+            <div class="mailto-container">
+                <a href="mailto:info@silviacasarone.com"><img class="img-responsive" src="/coming-soon.png"></a>
+            </div>
+        </div>
+    </div>
+    
+	<?php // echo $message; ?>
 </body>
 </html>
 <?php

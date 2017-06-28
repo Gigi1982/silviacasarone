@@ -22,8 +22,8 @@
                       <div class="listing-item" style="background-image:url('<?php echo $bg; ?>')">
                         <a class="listing-caption" href="<?php the_permalink(); ?>">
                             <div class="listing-inner">
-                                <?php if(get_field('progetti_data')): ?>
-                                <span class="listing-date"><?php the_field('progetti_data'); ?></span>
+                                <?php if(get_field('intervallo_data')): ?>
+                                <span class="listing-date"><?php the_field('intervallo_data'); ?></span>
                                 <?php endif; ?>
                                 <h2 class="listing-title"><?php the_title(); ?></h2>
                             </div>

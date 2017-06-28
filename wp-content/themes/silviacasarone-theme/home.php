@@ -53,7 +53,7 @@
                     <div class="sc-progetti-slider">
                         <ul class="sc-progetti-showcase">
                         <?php 
-                            $args = array('post_type' => 'progetti');
+                            $args = array('post_type' => array( 'laboratori', 'progetti' ) );
                             $loop = new WP_Query( $args );
                             while ( $loop->have_posts() ) : $loop->the_post();
                             $bg = get_the_post_thumbnail_url();
@@ -62,10 +62,18 @@
                                   <div class="sc-progetti-item" style="background-image:url('<?php echo $bg; ?>')">
                                     <a class="sc-progetti-caption" href="<?php the_permalink(); ?>">
                                         <div class="sc-progetti-inner">
+                                            <?php 
+                                            $post_type = get_post_type( get_the_ID() );
+                                            echo '<span class="post-type-label">' . $post_type . '</span>';
+                                            ?>
                                             <?php if(get_field('progetti_data')): ?>
                                             <span class="sc-progetti-date"><?php the_field('progetti_data'); ?></span>
                                             <?php endif; ?>
+                                            <?php if(get_field('intervallo_data')): ?>
+                                            <span class="listing-date"><?php the_field('intervallo_data'); ?></span>
+                                            <?php endif; ?>
                                             <h2 class="sc-progetti-title"><?php the_title(); ?></h2>
+                                            
                                         </div>
                                     </a>
                                   </div>
