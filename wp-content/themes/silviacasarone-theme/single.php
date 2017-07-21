@@ -1,67 +1,69 @@
 <?php get_header(); ?>
+<section class="single-pages">
+    <div class="container">
+        <?php 
+            $bg = get_the_post_thumbnail_url(); 
+            $templateUrl = get_template_directory_uri();
+        ?>
+        <?php if($bg): ?>
+        <header class="single-pages-header" style="background-image:url('<?php echo $bg; ?>');">
+        <?php else: ?>
+        <header class="single-pages-header" style="background-repeat:repeat;background-size: auto;background-image:url('<?php echo $templateUrl . "/img/pattern.png" ?>');">
+        <?php endif; ?>
+            <?php the_breadcrumb(); ?>
+            <div class="single-pages-title">
+                <div class="container-fluid">
+                    <h1><?php the_title(); ?></h1>
+                </div>
+            </div>
+        </header>
+        <section class="single-pages-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="left-column">
+                            <?php if(get_field('news_data')): ?>
+                            <div class="single-pages-metadata-block">
+                                <h5 class="single-pages-metadata-title">Quando</h5>
+                                <span class="single-pages-metadata-content green"><?php the_field('news_data'); ?></span>
+                            </div>
+                            <?php endif; ?>
+                            <?php if(get_field('news_indirizzo')): ?>
+                            <div class="single-pages-metadata-block">
+                                <h5 class="single-pages-metadata-title">Indirizzo</h5>
+                                <span class="single-pages-metadata-content green"><?php the_field('news_indirizzo'); ?></span>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="right-column">
+                            <?php if(get_field('news_testo')): ?>
+                            <p class=""><?php the_field('news_testo'); ?></p>
+                            <?php endif; ?> 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <section class="single-project-map">
+                            <?php 
 
-	<main role="main">
-	<!-- section -->
-	<section>
+                            $location = get_field('mappa_news');
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
-		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
-			<!-- /post thumbnail -->
-
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
-
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-			<!-- /post details -->
-
-			<?php the_content(); // Dynamic Content ?>
-
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
-
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
-
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-
-			<?php comments_template(); ?>
-
-		</article>
-		<!-- /article -->
-
-	<?php endwhile; ?>
-
-	<?php else: ?>
-
-		<!-- article -->
-		<article>
-
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
-
-		</article>
-		<!-- /article -->
-
-	<?php endif; ?>
-
-	</section>
-	<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+                            if( !empty($location) ):
+                            ?>
+                            <div class="acf-map">
+                                <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+                            </div>
+                            <?php endif; ?>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+        
+</section>
 
 <?php get_footer(); ?>

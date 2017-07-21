@@ -9,10 +9,8 @@
                         <div class="module-text">
                             <div class="col-md-6">
                                 <p>
-                                    Teatroterapeuta diplomata presso la Scuola di Formazione Triennale in Teatroterapiadi Colico (LC) e laureata in Dams e in Sociologia presso l’Università degli Studi di Torino. <br> <br>
-        Ho sviluppato una personale modalità di conduzione dei gruppi per dare spazio
-        alle urgenze comunicative, relazionali ed emotive dei partecipanti utilizzando
-        principalmente l’<b>espressione corporea, l’improvvisazione, la narrazione e la scrittura.</b>
+                                    Teatroterapeuta diplomata nella <a target="_blank" href="http://www.teatroterapia.it/">Scuola di Formazione Triennale in Teatroterapia di Colico (LC)</a> e laureata in Dams e in Sociologia all’Università degli Studi di Torino. 
+Sviluppo una personale modalità di conduzione dei gruppi per dare spazio alle urgenze comunicative, relazionali ed emotive dei partecipanti utilizzando l’espressione corporea, l’improvvisazione, la narrazione, la musica e la scrittura.</b>
                                 </p>
                             </div>
                             <div class="col-md-6">
@@ -44,9 +42,10 @@
                         </div>
                         <div class="col-md-12">
                             <div class="sc-payoff">
-                                <span class="white">Propongo PERCORSI DI GRUPPO A MEDIAZIONE TEATRALE,</span>
-                                <span class="black">IN CONTESTI FORMATIVI, SOCIALI, EDUCATIVI E RIABILITATIVI</span>
-                                <span class="white">PER tutte le fasce di età.</span>
+                                <span class="white">
+Propongo percorsi di gruppo a mediazione teatrale</span>
+                                <span class="black">in contesti formativi, sociali, educativi e riabilitativi</span>
+                                <span class="white">per partecipanti dagli 0 ai 99 anni.</span>
                             </div>
                         </div>
                     </div>
@@ -56,7 +55,7 @@
                             $args = array('post_type' => array( 'laboratori', 'progetti' ) );
                             $loop = new WP_Query( $args );
                             while ( $loop->have_posts() ) : $loop->the_post();
-                            $bg = get_the_post_thumbnail_url();
+                            $bg = get_the_post_thumbnail_url('', 'medium');
                             ?>
                               <li class="">
                                   <div class="sc-progetti-item" style="background-image:url('<?php echo $bg; ?>')">

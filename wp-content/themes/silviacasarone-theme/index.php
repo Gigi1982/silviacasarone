@@ -2,18 +2,28 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="news-listing">
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+<!--			<h1><?php // _e( 'Latest Posts', 'html5blank' ); ?></h1>-->
 
-			<?php get_template_part('loop'); ?>
+			<div class="container">
+                
+                <header class="category-pages-header">
+                    <?php the_breadcrumb(); ?>
+                    <div class="category-pages-title">
+                        <div class="container-fluid">
+                            <h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+                        </div>
+                    </div>
+                </header>
+                
+                <?php get_template_part('loop'); ?>
+            </div>
 
-			<?php get_template_part('pagination'); ?>
+			<?php // get_template_part('pagination'); ?>
 
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
