@@ -18,7 +18,7 @@
                     <a class="listing-caption" href="<?php the_permalink(); ?>">
                         <div class="listing-inner">
                             <span class="listing-date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-                            <h2 class="listing-title"><?php the_title(); ?></h2>
+                            <h2 class="listing-news-title"><?php the_title(); ?></h2>
                         </div>
                     </a>
                 <!-- /post title -->

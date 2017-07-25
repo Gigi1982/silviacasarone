@@ -45,10 +45,10 @@
                                 <span class="single-pages-metadata-content green"><?php the_field('progetti_partecipanti'); ?></span>
                             </div>
                             <?php endif; ?> 
-                            <?php if(get_field('progetti_partnership')): ?>
+                            <?php if(get_field('progetto_associazione')): ?>
                             <div class="single-pages-metadata-block">
-                                <h5 class="single-pages-metadata-title">In collaborazione con</h5>
-                                <span class="single-pages-metadata-content green"><?php the_field('progetti_partnership'); ?></span>
+                                <h5 class="single-pages-metadata-title">Proposto da</h5>
+                                <a target="_blank" href="<?php the_field('associazione_link'); ?>"><span class="single-pages-metadata-content green"><?php the_field('progetto_associazione'); ?></span></a>
                             </div>
                             <?php endif; ?> 
                         </div>
