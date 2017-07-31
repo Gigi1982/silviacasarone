@@ -140,6 +140,9 @@ function html5blank_header_scripts()
         
         wp_register_script('lightslider', get_template_directory_uri() . '/js/lib/lightslider.js', array(), '1.0');
         wp_enqueue_script('lightslider'); // Enqueue it!
+        
+        wp_register_script('bootstrap', get_template_directory_uri() . '/js/lib/bootstrap.min.js', array(), '3.3.7');
+        wp_enqueue_script('bootstrap'); // Enqueue it!
     }
 }
 
