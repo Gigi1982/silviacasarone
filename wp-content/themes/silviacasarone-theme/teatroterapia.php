@@ -40,13 +40,27 @@
                             </div>
                             <div id="<?php the_sub_field('titolo_bottone'); ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                               <div class="panel-body">
-                                <?php the_sub_field('testo_bottone'); ?>
+                                  <div><?php the_sub_field('testo_bottone'); ?></div>
+                                  <div class="teatroterapia-links">
+                                      <?php if( have_rows('bottoni_links') ): ?>
+                                        <h4 class="teatroterapia-links-title">Vedi anche</h4>
+                                      
+                                      <div class="teatroterapia-inner-link">
+                                          <?php while ( have_rows('bottoni_links') ) : the_row(); ?>
+                                            <a class="teatroterapia-link-item" href="<?php the_sub_field('link_interno'); ?>">Link #1</a>
+                                          <?php endwhile; ?>
+                                      </div>
+                                      
+                                    </div>
+                                  <?php endif; ?> 
                               </div>
+                                
                             </div>
                           </div>
                         <?php endwhile; ?>
                     </div>
                     <?php endif; ?>
+                    
                 </div>
             </div>
         </section>

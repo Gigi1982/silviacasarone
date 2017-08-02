@@ -14,25 +14,19 @@ Sviluppo una personale modalità di conduzione dei gruppi per dare spazio alle u
                                 </p>
                             </div>
                             <div class="col-md-6">
-                                <div class="sc-laboratori-block">
-                                    <?php 
-                                    $args = array(
-                                        'post_type' => 'laboratori',
-                                        'posts_per_page'   => 1
-                                    );
-                                    $loop = new WP_Query( $args );
-                                    while ( $loop->have_posts() ) : $loop->the_post();
-                                    ?>
-                                        <div class="sc-laboratori-listing-content">
-                                            <span class="date-intervallo titoletti"><?php the_field('intervallo_data'); ?></span>
-                                            <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-                                            <p><?php html5wp_excerpt('html5wp_custom_post'); ?></p>
-                                        </div>
-                                    <?php 
-                                    endwhile;
-                                    wp_reset_query();
-                                    ?>
-                                </div>
+                                <ul class="sc-news-block">
+                                    <?php
+                                    $temp = $wp_query; $wp_query= null;
+                                    $wp_query = new WP_Query(); $wp_query->query('posts_per_page=10' . '&paged='.$paged);
+                                    while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+                                    <li>
+                                        <h2><a href="<?php the_permalink(); ?>" title="Read more"><?php the_title(); ?></a></h2>
+                                        <?php if(get_field('news_testo')): ?>
+                                        <div><?php the_field('news_testo'); ?></div>
+                                        <?php endif; ?> 
+                                    </li>
+                                    <?php endwhile; ?>
+                                </ul>
                             </div>
                             <div class="col-md-12">
                                 <div class="sc-inner-link text-right">
