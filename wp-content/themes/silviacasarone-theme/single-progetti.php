@@ -50,7 +50,16 @@
                                 <h5 class="single-pages-metadata-title">Proposto da</h5>
                                 <a target="_blank" href="<?php the_field('associazione_link'); ?>"><span class="single-pages-metadata-content green"><?php the_field('progetto_associazione'); ?></span></a>
                             </div>
-                            <?php endif; ?> 
+                            <?php endif; ?>
+                            <?php if( have_rows('progetti_links') ): ?>
+                            <div class="single-pages-metadata-block">
+                                
+                                <h5 class="single-pages-metadata-title">Links</h5>
+                                <?php while ( have_rows('progetti_links') ) : the_row(); ?>
+                                <div class="link-container"><a target="_blank" href="<?php the_sub_field('link_item'); ?>"><span class="single-pages-metadata-content green"><?php the_sub_field('link_item'); ?></span></a></div>
+                                <?php endwhile; ?>
+                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -63,6 +72,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
+                        <?php if(get_field('progetto_indirizzo')): ?>
+                        <div class="single-pages-metadata-block indirizzo-block">
+                            <h5 class="single-pages-metadata-title">Indirizzo</h5>
+                            <span class="single-pages-metadata-content green"><?php the_field('progetto_indirizzo'); ?></span>
+                        </div>
+                        
+                        <?php endif; ?>
                         <section class="single-project-map">
                             <?php 
 

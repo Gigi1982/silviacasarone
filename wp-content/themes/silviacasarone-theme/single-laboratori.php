@@ -48,7 +48,10 @@
                             <?php if(get_field('progetti_partnership')): ?>
                             <div class="single-pages-metadata-block">
                                 <h5 class="single-pages-metadata-title">Già proposto a</h5>
-                                <a target="_blank" href="<?php the_field('associazione_link'); ?>"><span class="single-pages-metadata-content green"><?php the_field('progetti_partnership'); ?></span></a>
+                                <div class="laboratori-links"><a target="_blank" href="<?php the_field('associazione_link'); ?>"><span class="single-pages-metadata-content green"><?php the_field('progetti_partnership'); ?></span></a></div>
+                                <?php if(get_field('progetti_partnership_additional_link')): ?>
+                                <div class="laboratori-links"><a target="_blank" href="<?php the_field('progetti_partnership_additional_link'); ?>"><span class="single-pages-metadata-content green"><?php the_field('progetti_partnership_additional_name'); ?></span></a></div>
+                                <?php endif; ?> 
                             </div>
                             <?php endif; ?> 
                             <?php if(get_field('progetto_sostegno')): ?>

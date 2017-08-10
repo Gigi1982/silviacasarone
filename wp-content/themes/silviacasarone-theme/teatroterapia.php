@@ -27,18 +27,53 @@
                         <?php endif; ?> 
                     </div>
                     
+                    <div class="media-aligned-text text-right">
+                            <div class="panel-group styled-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                                <?php
+                                if(get_field("accordion")){
+                                $indexAcc = 1;
+                                foreach(get_field("accordion") as $accordionBlocco) {
+                                ?>
+                              <div class="panel panel-default">
+                                
+                                <div class="panel-heading" role="tab" id="heading<?php echo $indexAcc;?>">
+                                  <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $indexAcc;?>" aria-expanded="true" class="collapsed" aria-controls="collapse<?php echo $indexAcc;?>">
+                                      <?php echo $accordionBlocco['titolo_pannello']; ?>
+                                        <i class="glyphicon glyphicon-plus pull-right"></i>
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div id="collapse<?php echo $indexAcc;?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $indexAcc;?>">
+                                  <div class="panel-body">
+                                    <?php echo $accordionBlocco['contenuto_pannello']; ?>
+                                  </div>
+                                </div>
+                                  
+                              </div>
+                                <?php
+                            $indexAcc++;
+                        }
+                    }       
+                  ?>  
+                            </div>
+                        </div>
+                    
                     <?php if( have_rows('bottoni_teatroterapia') ): ?>
                     <div class="panel-group teatroterapia-buttons" id="accordion" role="tablist" aria-multiselectable="true">
-                        <?php while ( have_rows('bottoni_teatroterapia') ) : the_row(); ?>
+                        <?php 
+                        $indexAcc = 1;
+                        while ( have_rows('bottoni_teatroterapia') ) : the_row(); 
+                        ?>
                           <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
+                            <div class="panel-heading" role="tab" id="heading<?php echo $indexAcc;?>">
                               <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<?php the_sub_field('titolo_bottone'); ?>" aria-controls="collapseOne">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $indexAcc;?>" aria-controls="collapse<?php echo $indexAcc;?>">
                                   <?php the_sub_field('titolo_bottone'); ?>
                                 </a>
                               </h4>
                             </div>
-                            <div id="<?php the_sub_field('titolo_bottone'); ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div id="#collapse<?php echo $indexAcc;?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<?php echo $indexAcc;?>">
                               <div class="panel-body">
                                   <div><?php the_sub_field('testo_bottone'); ?></div>
                                   <div class="teatroterapia-links">
@@ -57,7 +92,9 @@
                                 
                             </div>
                           </div>
-                        <?php endwhile; ?>
+                        <?php 
+                        $indexAcc++;
+                        endwhile; ?>
                     </div>
                     <?php endif; ?>
                     
