@@ -15,6 +15,7 @@
                         <ul class="list-unstyled list-inline social-footer">
                             <li><a target="_blank" href="https://www.facebook.com/Silvia-Casarone-Teatroterapia-149586552270120/ "><i class="icon icon-facebook"></i></a></li>
                             <li><a target="_blank" href="http://linkedin.com/in/silvia-casarone-17857a62"><i class="icon icon-linkedin"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="icon icon-youtube"></i></a></li>
                         </ul>
                     </nav>
                 </div>

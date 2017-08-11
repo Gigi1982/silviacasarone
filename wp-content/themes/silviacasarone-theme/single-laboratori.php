@@ -71,7 +71,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-offset-4 col-md-8">
+                    <div class="col-md-4">
+                        <?php if(get_field('progetto_indirizzo')): ?>
+                        <div class="single-pages-metadata-block indirizzo-block">
+                            <h5 class="single-pages-metadata-title">Indirizzo</h5>
+                            <span class="single-pages-metadata-content green"><?php the_field('progetto_indirizzo'); ?></span>
+                        </div>
+                        
+                        <?php endif; ?>
+                        <section class="single-project-map">
+                            <?php 
+
+                            $location = get_field('mappa_progetto');
+
+                            if( !empty($location) ):
+                            ?>
+                            <div class="acf-map">
+                                <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+                            </div>
+                            <?php endif; ?>
+                        </section>
+                    </div>
+                    <div class="col-md-8">
                         <?php if(get_field('progetto_finalita')): ?>
                         <h3 class="single-pages-left-title">Finalità</h3>
                         <div class="single-pages-text"><?php the_field('progetto_finalita'); ?></div>

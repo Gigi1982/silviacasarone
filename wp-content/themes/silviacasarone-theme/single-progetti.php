@@ -103,11 +103,13 @@
         </section>
     </div>
     
+    <?php if(get_field('progetto_associazione')): ?>
     <div class="container">
         <div class="sc-payoff single-pages-footer no-bg">
-            <div class="container-fluid"><span class="black">PROPOSTO DA </span> <span class="white"><?php the_field('progetto_associazione'); ?></span><span class="black">CON IL SOSTEGNO DI </span><span class="white"><?php the_field('progetto_sostegno'); ?></span></div>
+            <div class="container-fluid"><span class="black">PROPOSTO DA </span> <span class="white"><?php the_field('progetto_associazione'); ?></span><?php if(get_field('progetto_sostegno')): ?><span class="black">CON IL SOSTEGNO DI </span><span class="white"><?php the_field('progetto_sostegno'); ?></span><?php endif; ?> </div>
         </div>
     </div>
+    <?php endif; ?>
 </section>
 
 <?php get_footer(); ?>

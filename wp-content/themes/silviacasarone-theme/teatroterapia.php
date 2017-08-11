@@ -59,12 +59,15 @@
                             </div>
                         </div>
                     
-                    <?php if( have_rows('bottoni_teatroterapia') ): ?>
+                    <?php 
+                    if( have_rows('bottoni_teatroterapia') ):
+                    
+                    ?>
+                    <?php 
+                    $indexAcc = 1;
+                    while ( have_rows('bottoni_teatroterapia') ) : the_row(); ?>
                     <div class="panel-group teatroterapia-buttons" id="accordion" role="tablist" aria-multiselectable="true">
-                        <?php 
-                        $indexAcc = 1;
-                        while ( have_rows('bottoni_teatroterapia') ) : the_row(); 
-                        ?>
+                        
                           <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="heading<?php echo $indexAcc;?>">
                               <h4 class="panel-title">
@@ -73,17 +76,23 @@
                                 </a>
                               </h4>
                             </div>
-                            <div id="#collapse<?php echo $indexAcc;?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<?php echo $indexAcc;?>">
+                            <div id="collapse<?php echo $indexAcc;?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $indexAcc;?>">
                               <div class="panel-body">
                                   <div><?php the_sub_field('testo_bottone'); ?></div>
                                   <div class="teatroterapia-links">
                                       <?php if( have_rows('bottoni_links') ): ?>
                                         <h4 class="teatroterapia-links-title">Vedi anche</h4>
-                                      
                                       <div class="teatroterapia-inner-link">
-                                          <?php while ( have_rows('bottoni_links') ) : the_row(); ?>
-                                            <a class="teatroterapia-link-item" href="<?php the_sub_field('link_interno'); ?>">Link #1</a>
-                                          <?php endwhile; ?>
+                                          <?php
+                                          $indexLink = 1;
+                                          while ( have_rows('bottoni_links') ) : the_row(); 
+                                          ?>
+                                            <div>
+                                                <a class="teatroterapia-link-item" href="<?php the_sub_field('bottoni_links'); ?>">Link di Approfondimento <?php echo $indexLink;?></a>
+                                          </div>
+                                          <?php 
+                                          $indexLink++;
+                                          endwhile; ?>
                                       </div>
                                       
                                     </div>
@@ -91,15 +100,21 @@
                               </div>
                                 
                             </div>
-                          </div>
-                        <?php 
-                        $indexAcc++;
-                        endwhile; ?>
+                        </div>
                     </div>
-                    <?php endif; ?>
+                    <?php 
+                    $indexAcc++;
+                    endwhile; ?>
+                    <?php 
+                    
+                    endif; 
+                    ?>
                     
                 </div>
             </div>
+            <!-- custom contact load -->
+            
+			<?php include('inc/contattami.php'); ?>
         </section>
     </div>
 </section>

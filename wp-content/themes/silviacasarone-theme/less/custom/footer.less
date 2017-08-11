@@ -33,20 +33,30 @@
         float: none;
         font-size: 12px;
     }
-    .social-footer {
+}
+
+.social-footer {
+    &.contacts {
+        padding-left: 0;
+        margin: 40px 0;
         > li {
             > a {
-                background-color: #fff;
-                border-radius: 50%;
-                width: @footer-social-btn;
-                height: @footer-social-btn;
-                line-height: @footer-social-btn;
-                display: block;
+                background-color: @sc-primary;
             }
         }
-        .icon {
-            color:#000;
-            font-size: 22px;
+    }
+    > li {
+        > a {
+            background-color: #fff;
+            border-radius: 50%;
+            width: @footer-social-btn;
+            height: @footer-social-btn;
+            line-height: @footer-social-btn;
+            display: block;
         }
+    }
+    .icon {
+        color:#000;
+        font-size: 22px;
     }
 }

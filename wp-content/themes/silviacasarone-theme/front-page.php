@@ -8,10 +8,12 @@
                     <div class="row">
                         <div class="module-text">
                             <div class="col-md-6">
-                                <p>
-                                    Teatroterapeuta diplomata nella <a target="_blank" href="http://www.teatroterapia.it/">Scuola di Formazione Triennale in Teatroterapia di Colico (LC)</a> e laureata in Dams e in Sociologia all’Università degli Studi di Torino. 
-Sviluppo una personale modalità di conduzione dei gruppi per dare spazio alle urgenze comunicative, relazionali ed emotive dei partecipanti utilizzando l’espressione corporea, l’improvvisazione, la narrazione, la musica e la scrittura.</b>
-                                </p>
+                                <div class="sc-home-description">
+                                    <p>
+                                        Teatroterapeuta diplomata nella <a target="_blank" href="http://www.teatroterapia.it/">Scuola di Formazione Triennale in Teatroterapia di Colico (LC)</a> e laureata in Dams e in Sociologia all’Università degli Studi di Torino. 
+    Sviluppo una personale modalità di conduzione dei gruppi per dare spazio alle urgenze comunicative, relazionali ed emotive dei partecipanti utilizzando l’espressione corporea, l’improvvisazione, la narrazione, la musica e la scrittura.</b>
+                                    </p>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <ul class="sc-news-block">
@@ -27,11 +29,6 @@ Sviluppo una personale modalità di conduzione dei gruppi per dare spazio alle u
                                     </li>
                                     <?php endwhile; ?>
                                 </ul>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="sc-inner-link text-right">
-                                    <a href="#">PROSSIMI LABORATORI></a>
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -100,7 +97,7 @@ Propongo percorsi di gruppo a mediazione teatrale</span>
                     <?php endif; ?>
                     
                 </div>
-                
+                <?php include('inc/contattami.php'); ?>
             </div>
 		
 		</section>
