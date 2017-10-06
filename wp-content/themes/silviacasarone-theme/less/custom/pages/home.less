@@ -39,6 +39,50 @@
     }
 }
 
+.sc-home-news-container {
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    .sc-home-news-img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        min-width: 580px;
+    }
+    &:after {
+        content:"";
+        background: -moz-linear-gradient(top, @green-lighter 0%, @green-darker 100%); 
+        background: -webkit-linear-gradient(top, @green-lighter 0%,@green-darker 100%);
+        background: linear-gradient(to bottom, @green-lighter 0%,@green-darker 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a8cc6ac', endColorstr='#cc54c693',GradientType=0 );
+        position: absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        z-index: 1;
+    }
+    &:before {
+        content:"";
+        background: -moz-linear-gradient(top, @black-lighter 0%, @black-darker 100%); 
+        background: -webkit-linear-gradient(top, @black-lighter 0%,@black-darker 100%);
+        background: linear-gradient(to bottom, @black-lighter 0%,@black-darker 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a8cc6ac', endColorstr='#cc54c693',GradientType=0 );
+        position: absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        z-index: 2;
+    }
+}
+
+.sc-home-news-noimg {
+    min-height: 150px;
+}
+
 .sc-progetti-slider {
     margin-top: 40px;
     .lSSlideOuter .lSPager.lSpg {

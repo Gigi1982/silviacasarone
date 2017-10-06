@@ -9,10 +9,26 @@
                         <div class="module-text">
                             <div class="col-md-6">
                                 <div class="sc-home-description">
-                                    <p>
-                                        Teatroterapeuta diplomata nella <a target="_blank" href="http://www.teatroterapia.it/">Scuola di Formazione Triennale in Teatroterapia di Colico (LC)</a> e laureata in Dams e in Sociologia all’Università degli Studi di Torino. 
-    Sviluppo una personale modalità di conduzione dei gruppi per dare spazio alle urgenze comunicative, relazionali ed emotive dei partecipanti utilizzando l’espressione corporea, l’improvvisazione, la narrazione, la musica e la scrittura.</b>
-                                    </p>
+                                    <?php if(get_field('descrizione_a_sinistra')): ?>
+                                    <div><?php the_field('descrizione_a_sinistra'); ?></div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="sc-nl-form">
+                                    <!-- Begin MailChimp Signup Form -->
+                                    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                                    <div id="mc_embed_signup">
+                                    <form action="//silviacasarone.us16.list-manage.com/subscribe/post?u=1a0e72349ddb4015f8857c955&amp;id=a5364cc6b0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                        <div id="mc_embed_signup_scroll">
+                                        <h2><label for="mce-EMAIL">Iscriviti alla newsletter</label></h2>
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Inserisci il tuo indirizzo e-mail" required>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1a0e72349ddb4015f8857c955_a5364cc6b0" tabindex="-1" value=""></div>
+                                        <div class="clear"><input type="submit" value="Iscriviti" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                        </div>
+                                    </form>
+                                    </div>
+
+                                    <!--End mc_embed_signup-->
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -22,28 +38,47 @@
                                     $wp_query = new WP_Query(); $wp_query->query('posts_per_page=10' . '&paged='.$paged);
                                     while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
                                     <li>
+                                        <!-- post thumbnail -->
+                                        <?php 
+                                        $templateUrl = get_template_directory_uri();
+                                        $bg = get_the_post_thumbnail_url();
+                                        if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+                                        <div class="sc-home-news-container">
+                                            <img class="sc-home-news-img" src="<?php echo $bg; ?>">
+                                        </div>
+                                        <?php else: ?>
+                                        <div class="sc-home-news-noimg" style="background-image:url('<?php echo $templateUrl . "/img/pattern.png" ?>');"></div>       
+                                        <?php endif; ?>
                                         <h2><a href="<?php the_permalink(); ?>" title="Read more"><?php the_title(); ?></a></h2>
                                         <?php if(get_field('news_testo')): ?>
-                                        <div><?php the_field('news_testo'); ?></div>
+                                        <div>
+                                            <?php //the_field('news_testo'); ?>
+                                            <?php echo custom_field_excerpt(); ?>
+                                        </div>
                                         <?php endif; ?> 
                                     </li>
-                                    <?php endwhile; ?>
+                                    <?php 
+                                    endwhile; 
+                                    wp_reset_query();
+                                    ?>
                                 </ul>
                             </div>
-                        </div>
+                        </div>                            
                         <div class="col-md-12">
                             <div class="sc-payoff">
-                                <span class="white">
-Propongo percorsi di gruppo a mediazione teatrale</span>
-                                <span class="black">in contesti formativi, sociali, educativi e riabilitativi</span>
-                                <span class="white">per partecipanti dagli 0 ai 99 anni.</span>
+                                <?php if(get_field('blocco_centrale')): ?>
+                                    <span class="white">
+                                    <?php the_field('blocco_centrale'); ?>
+                                    </span>
+                                <?php endif; ?>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="sc-progetti-slider">
                         <ul class="sc-progetti-showcase">
                         <?php 
-                            $args = array('post_type' => array( 'laboratori', 'progetti' ) );
+                            $args = array('post_type' => array( 'laboratori', 'progetti' ), 'orderby'   => 'rand' );
                             $loop = new WP_Query( $args );
                             while ( $loop->have_posts() ) : $loop->the_post();
                             $bg = get_the_post_thumbnail_url('', 'medium');

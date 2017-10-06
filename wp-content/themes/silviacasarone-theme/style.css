@@ -6754,7 +6754,7 @@ button.close {
   background-image: url('img/pattern.png');
   padding: 40px 30px;
   position: relative;
-  margin: 90px 0;
+  margin: 20px 0;
 }
 .sc-payoff.no-bg {
   background-image: none;
@@ -6779,7 +6779,6 @@ button.close {
 .sc-payoff .black {
   font-family: 'los_nichesregular';
   font-size: 44px;
-  display: block;
   text-transform: uppercase;
 }
 .sc-payoff .white {
@@ -6806,6 +6805,10 @@ h2,
 .h2 {
   font-family: 'los_niches-scitalic';
   font-size: 40px;
+}
+.listing-news-title {
+  font-family: 'los_niches-scitalic';
+  font-size: 26px;
 }
 h3,
 .h3 {
@@ -6907,6 +6910,7 @@ h1.sc-written-logo-inner,
 }
 .footer .footer-left-bar .footer-menu {
   margin-left: 10px;
+  margin-right: 32px;
 }
 .footer .footer-left-bar .footer-menu > li:last-child {
   display: none;
@@ -6914,7 +6918,19 @@ h1.sc-written-logo-inner,
 .footer .footer-left-bar .footer-menu > li > a {
   color: #fff;
 }
-.footer .social-footer > li > a {
+.footer .foto-copyright {
+  display: block;
+  float: none;
+  font-size: 12px;
+}
+.social-footer.contacts {
+  padding-left: 0;
+  margin: 40px 0;
+}
+.social-footer.contacts > li > a {
+  background-color: #54c693;
+}
+.social-footer > li > a {
   background-color: #fff;
   border-radius: 50%;
   width: 30px;
@@ -6922,7 +6938,7 @@ h1.sc-written-logo-inner,
   line-height: 30px;
   display: block;
 }
-.footer .social-footer .icon {
+.social-footer .icon {
   color: #000;
   font-size: 22px;
 }
@@ -7006,8 +7022,8 @@ h1.sc-written-logo-inner,
 }
 @font-face {
   font-family: 'fontello';
-  src: url('fonts/fontello.eot?88023815');
-  src: url('fonts/fontello.eot?88023815#iefix') format('embedded-opentype'), url('fonts/fontello.woff2?88023815') format('woff2'), url('fonts/fontello.woff?88023815') format('woff'), url('fonts/fontello.ttf?88023815') format('truetype'), url('fonts/fontello.svg?88023815#fontello') format('svg');
+  src: url('fonts/fontello.eot?82514072');
+  src: url('fonts/fontello.eot?82514072#iefix') format('embedded-opentype'), url('fontsfontello.woff2?82514072') format('woff2'), url('fonts/fontello.woff?82514072') format('woff'), url('fonts/fontello.ttf?82514072') format('truetype'), url('fonts/fontello.svg?82514072#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -7017,7 +7033,7 @@ h1.sc-written-logo-inner,
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?88023815#fontello') format('svg');
+    src: url('../font/fontello.svg?82514072#fontello') format('svg');
   }
 }
 */
@@ -7057,6 +7073,10 @@ h1.sc-written-logo-inner,
   content: '\e801';
 }
 /* '' */
+.icon-youtube:before {
+  content: '\e802';
+}
+/* '' */
 .listing-container {
   margin: 40px 0;
 }
@@ -7105,11 +7125,18 @@ h1.sc-written-logo-inner,
   margin-top: 0;
   color: #54c693;
 }
+.listing-container .listing-caption .listing-inner .listing-news-title {
+  margin-top: 0;
+  color: #54c693;
+}
 .category-pages-header {
   background-color: #54c693;
   background-image: url('img/pattern.png');
   padding: 40px 30px;
   position: relative;
+}
+.single-pages-body {
+  padding: 40px 0;
 }
 .single-pages ul {
   margin: 0;
@@ -7117,6 +7144,18 @@ h1.sc-written-logo-inner,
 }
 .single-pages ul > li {
   color: #54c693;
+}
+.wpcf7-form-control.wpcf7-submit {
+  background: #54c693;
+  min-width: 200px;
+  color: #fff;
+  border: 0;
+}
+.contact-map {
+  margin: 20px 0;
+}
+.contact-map .acf-map {
+  height: 400px;
 }
 .home-block-wpa {
   margin-top: 40px;
@@ -7136,8 +7175,60 @@ h1.sc-written-logo-inner,
   text-transform: uppercase;
   color: #000;
 }
+.sc-home-description {
+  position: relative;
+}
+.sc-home-description > p {
+  padding: 30px 10px;
+  font-size: 16px;
+}
+.sc-news-block li {
+  min-height: 200px;
+}
+.sc-home-news-container {
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+.sc-home-news-container .sc-home-news-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 580px;
+}
+.sc-home-news-container:after {
+  content: "";
+  background: -moz-linear-gradient(top, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
+  background: -webkit-linear-gradient(top, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
+  background: linear-gradient(to bottom, rgba(140, 198, 172, 0.1) 0%, #54c693 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a8cc6ac', endColorstr='#cc54c693', GradientType=0);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+.sc-home-news-container:before {
+  content: "";
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a8cc6ac', endColorstr='#cc54c693', GradientType=0);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
+}
+.sc-home-news-noimg {
+  min-height: 150px;
+}
 .sc-progetti-slider {
-  margin-top: 15px;
+  margin-top: 40px;
 }
 .sc-progetti-slider .lSSlideOuter .lSPager.lSpg {
   text-align: left;
@@ -7145,6 +7236,7 @@ h1.sc-written-logo-inner,
 .sc-progetti-slider .sc-progetti-item {
   height: 236px;
   position: relative;
+  background-size: cover;
 }
 .sc-progetti-slider .sc-progetti-item:after {
   content: "";
@@ -7219,6 +7311,9 @@ h1.sc-written-logo-inner,
 }
 .single-project-map .acf-map {
   height: 400px;
+}
+.indirizzo-block {
+  margin-bottom: 20px;
 }
 .left-column,
 .right-column {
@@ -7608,4 +7703,27 @@ h1.sc-written-logo-inner,
   border: 1px solid #54c693;
   width: 10px;
   height: 10px;
+}
+.teatroterapia-buttons {
+  margin-top: 40px;
+}
+.teatroterapia-buttons .panel-default > .panel-heading {
+  background-color: #54c693;
+  color: #fff;
+}
+.teatroterapia-buttons .teatroterapia-inner-link .teatroterapia-link-item {
+  color: #54c693;
+}
+.sc-nl-form {
+  padding: 5px 10px;
+}
+.sc-nl-form #mc_embed_signup form {
+  padding: 0;
+}
+.sc-nl-form #mc_embed_signup_scroll {
+  text-align: left;
+  margin-top: 50px;
+}
+.sc-nl-form #mc_embed_signup label {
+  font-size: 30px;
 }

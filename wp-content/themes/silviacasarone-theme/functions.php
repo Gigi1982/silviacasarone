@@ -569,6 +569,21 @@ function my_acf_google_map_api( $api ){
 	
 }
 
+// Custom Excerpt function for Advanced Custom Fields
+function custom_field_excerpt() {
+	global $post;
+	$text = get_field('news_testo'); //Replace 'your_field_name'
+	if ( '' != $text ) {
+		$text = strip_shortcodes( $text );
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]&gt;', ']]&gt;', $text);
+		$excerpt_length = 60; // 20 words
+		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	}
+	return apply_filters('the_excerpt', $text);
+}
+
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 ?>
