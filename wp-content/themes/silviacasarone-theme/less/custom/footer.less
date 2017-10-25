@@ -7,17 +7,14 @@
     min-height: @footer-height;
     padding-top: 20px;
     .footer-left-bar {
-        display: flex;
-        align-items: baseline;
+        //display: flex;
+        //align-items: baseline;
         .separator {
-            margin-left: 10px;
-            margin-right: 10px;
             padding-left: 5px;
             padding-right: 5px;
+            display: none;
         }
         .footer-menu {
-            margin-left: 10px;
-            margin-right: 32px;
             > li {
                 &:last-child {
                     display: none;
@@ -26,12 +23,67 @@
                     color:#fff;
                 }
             }
+            @media screen and (min-width:@screen-sm) {
+                margin-left: 10px;
+                margin-right: 32px;
+            }
+            @media screen and (max-width:@screen-sm) {
+                margin-top: 10px;
+                >li {
+                    display: block;
+                    width: 100%;
+                    > a {
+                        text-transform: uppercase;
+                    }
+                }
+            }
         }
     }
     .foto-copyright {
         display: block;
         float: none;
         font-size: 12px;
+    }
+    .footer-text {
+        //display: block;
+        //width: 100%;
+    }
+    @media screen and (min-width:@screen-md) {
+        .footer-left-bar {
+            display: flex;
+            align-items: baseline;
+            float:left;
+            .separator {
+                display: inline-block;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            
+        }
+    }
+    @media screen and (max-width:667px) {
+        .footer-text {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+    @media screen and (max-width:@screen-md) {
+        //margin-left: 5px;
+        //margin-right: 5px;
+        .footer-left-bar {
+            .separator {
+                
+            }
+        }
+        .footer-text {
+            //display: block;
+            //width: 100%;
+            margin-bottom: 10px;
+        }
+        .navbar-nav {
+            margin:0;
+        }
     }
 }
 

@@ -47,9 +47,30 @@
 					<!-- nav -->
                     <div class="container">
                         <nav class="nav sc-nav" role="navigation">
-                            <div class="container-fluid"><?php html5blank_nav(); ?></div>
+                            <div class="container-fluid">
+                                <div class="hidden-xs hidden-sm"><?php html5blank_nav(); ?></div>
+                                <div class="mobile-nav-icon">
+                                    <a href="#" id="nav-icon3" class="hidden-md hidden-lg">
+                                      <span></span>
+                                      <span></span>
+                                      <span></span>
+                                      <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            
                         </nav>
+                        
                     </div>
+                    <nav class="mobile-nav">
+                        <div class="icon-close-container"><a href="#" class="mobile-nav-close"><i class="icon icon-close"></i></a></div>
+                        <ul class="list-unstyled">
+                            <?php html5blank_nav(); ?>
+                        </ul>
+                        
+                    </nav>
+					<!-- /nav -->
+
 					<!-- /nav -->
 
 			</header>

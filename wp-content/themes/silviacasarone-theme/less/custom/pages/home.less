@@ -148,11 +148,18 @@
     margin-top: 60px;
     margin-bottom: 60px;
     .sc-partnership-inner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @media screen and (min-width:@screen-sm) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
         .sc-partner-item {
             margin-right: 10px;
+            text-align: center;
+            @media screen and (max-width:@screen-sm) {
+                margin-bottom: 20px;
+            }
         }
     }
 }

@@ -44,7 +44,7 @@
                                         $bg = get_the_post_thumbnail_url();
                                         if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
                                         <div class="sc-home-news-container">
-                                            <img class="sc-home-news-img" src="<?php echo $bg; ?>">
+                                            <img class="sc-home-news-img img-responsive" src="<?php echo $bg; ?>">
                                         </div>
                                         <?php else: ?>
                                         <div class="sc-home-news-noimg" style="background-image:url('<?php echo $templateUrl . "/img/pattern.png" ?>');"></div>       
@@ -81,7 +81,7 @@
                             $args = array('post_type' => array( 'laboratori', 'progetti' ), 'orderby'   => 'rand' );
                             $loop = new WP_Query( $args );
                             while ( $loop->have_posts() ) : $loop->the_post();
-                            $bg = get_the_post_thumbnail_url('', 'medium');
+                            $bg = get_the_post_thumbnail_url('', 'large');
                             ?>
                               <li class="">
                                   <div class="sc-progetti-item" style="background-image:url('<?php echo $bg; ?>')">
