@@ -21,6 +21,7 @@
                 </div>
                 <div class="container">
                     <span class="foto-copyright">Foto in hp di Marco Apostoli Cappello</span>
+                    <span class="foto-copyright">sviluppato da <a href="http://www.ikkai.it" target="_blank">ikkai</a></span>
                 </div>
 			</footer>
 			<!-- /footer -->

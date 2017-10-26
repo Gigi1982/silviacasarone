@@ -6960,6 +6960,9 @@ h1.sc-written-logo-inner,
   float: none;
   font-size: 12px;
 }
+.footer .foto-copyright a {
+  color: #54c693;
+}
 @media screen and (min-width: 992px) {
   .footer .footer-left-bar {
     display: flex;
